@@ -1,0 +1,25 @@
+footer.footer.row
+  .text-center
+    = "#{Date.current.year} #{Rails.application.class.parent_name}"
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = yield :footer_js
+  javascript:
+    (function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,"script","https://www.google-analytics.com/analytics.js","ga");
+
+    var dev_cookie_hostname = "#{ENV['DEV_COOKIE_HOSTNAME']}";
+    var analytics_id = "#{ENV['GOOGLE_ANALYTICS_ID']}";
+    var dev_cookie = "#{ENV['CHROME_DEV_COOKIE']}";
+
+    if (document.cookie.indexOf(dev_cookie) !== -1) {
+      // I am a developer
+    } else {
+      // I am NOT a developer            
+      if (document.location.hostname.search(dev_cookie_hostname) !== -1){
+        //Not on Localhost
+        ga("create", analytics_id, "auto");
+        ga("send", "pageview");
+      }
+    }

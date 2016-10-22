@@ -1,0 +1,12 @@
+.wrapper-page.animated.fadeInDown
+  .panel.panel-color.panel-primary
+    .panel-heading
+      h3.text-center.m-t-10 Forgot Password?
+    .form-horizontal.m-t-40
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = devise_error_messages!
+        .col-xs-12.form-group
+          = f.input :email, autofocus: true, placeholder: "Email", label: false, class: "form-control"
+        .form-group.text-left
+          .col-xs-5
+            = f.submit "Reset Password", class: "btn btn-purple w-md"

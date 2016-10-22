@@ -1,0 +1,24 @@
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-lg-12
+        .col-lg-3
+          h1.panel-title= "People: #{@object_count}"
+        .pull-right
+          button.btn.btn-lg.btn-success width="90%"
+            =link_to "Create Person", new_admin_person_path
+  .panel-body
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        .text-center=paginate @people    
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th Created At
+            tbody
+              - @people.each do |p|
+                tr
+                  td= p.created_at             
+                  td= link_to "Edit", edit_admin_person_path(p)
+
+        .text-center=paginate @people

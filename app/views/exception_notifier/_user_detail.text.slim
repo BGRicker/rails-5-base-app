@@ -1,0 +1,4 @@
+- if @request.session.has_key?(:admin_id)
+  | * Admin: #{Admin.find(@request.session[:admin_id]).inspect.html_safe}
+- else
+  | * User Information Not Available

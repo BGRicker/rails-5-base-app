@@ -1,0 +1,35 @@
+.c3-line {
+	stroke-width: 4px;
+}
+
+.c3-ygrid {
+  stroke-dasharray: 0 0; 
+}
+
+.show-table {
+	tbody {
+		td {
+			font-size: 18px;
+		}
+		td:first-child {
+			font-weight: bold;
+		}
+	}
+}
+
+.row-eq-height {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display:         flex;
+}
+
+.bolded {
+	font-weight: bold;
+}
+
+.not-production {
+   background: #027936;
+    color: white;
+    text-align: center;
+}

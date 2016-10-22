@@ -1,0 +1,9 @@
+nav.navigation
+  ul.list-unstyled
+    li= link_to(root_path) do
+      = image_tag "logo.png", width: "50px"
+      br
+      span.nav-label  = Rails.application.class.parent_name
+    li.active=link_to(root_path) do
+      i.ion-home
+      span.nav-label Dashboard

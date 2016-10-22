@@ -1,0 +1,10 @@
+.row
+  .col-md-12.col-sm-12.col-xs-12
+    .panel.panel-default
+      .panel-heading
+        .pull-right
+          button.btn.btn-lg.btn-success width="90%"
+            =link_to "Edit Person", edit_admin_person_path(@person)
+        .text-pull-left
+          h2 = @person.created_at
+      =render partial: "people/person", locals: {person: @person}

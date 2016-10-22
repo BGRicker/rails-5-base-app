@@ -1,0 +1,31 @@
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-lg-12
+        h1.panel-title= "Search Results For: #{@search_query}"
+.panel.panel-default
+  .panel-heading
+    .row
+      .col-lg-12
+        .col-lg-3
+          h1.panel-title= "People Found: #{@people.total_count}"
+  .panel-body
+    .row
+      .col-md-12.col-sm-12.col-xs-12
+        =paginate @people, param_name: :people_page
+        .text-center=paginate @people    
+        table.table.table-striped.table-hover
+          thead
+            tr
+              th Name
+              th Suffix
+              th Born
+              th Died
+            tbody
+              - @people.each do |p|
+                tr
+                  td= link_to p.full_name, person_path(p)
+                  td= p.suffix
+                  td= p.born_on
+                  td= p.died_on
+        .text-center=paginate @people

@@ -1,0 +1,18 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" /
+    meta charset="utf-8" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    meta content="" name="description" /
+    meta content="" name="author" /
+    / = favicon_link_tag 'favicon.png'
+    title = "#{Rails.application.class.parent_name} Login"
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  body
+    .row
+      =render partial: 'layouts/admin/env_banner' unless Rails.env.production?
+    = yield
+  footer
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true

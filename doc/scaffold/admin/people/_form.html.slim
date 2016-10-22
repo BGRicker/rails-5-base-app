@@ -1,0 +1,18 @@
+=simple_form_for([:admin, @person], html: {class: "form-vertical"}) do |f|
+  .col-lg-12
+    .panel.panel-default
+      .panel-body
+        .row
+          .form-group.clearfix
+            .col-lg-6
+              =f.input :created_at
+        h3 Cocoon Examples
+        .panel-body
+          .row
+            .form-group.clearfix
+            #cocoon_examples
+            = f.simple_fields_for :cocoon_examples do |cocoon_example|
+              = render partial: 'admin/cocoon_examples/cocoon_example_fields', locals: {f: cocoon_example}
+            .links
+              = link_to_add_association 'New Relation', f, :cocoon_examples, partial: 'admin/cocoon_examples/cocoon_example_fields'                 
+  =f.button :submit, class: 'btn btn-success btn-lg w-md m-b-5 pull-right'

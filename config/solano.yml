@@ -1,0 +1,12 @@
+ruby_version: 2.3.0
+test_pattern:
+  - spec/**/*_spec.rb
+  - features/**/*.feature
+postgresql:
+  version: '9.5.1'
+redis:
+  version: '3.0.5'
+sqlite: false
+language_versions: from_file
+bundler_version: 1.11.2
+coverage: true

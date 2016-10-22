@@ -1,0 +1,28 @@
+header.top-head.container-fluid
+  button.navbar-toggle.pull-left type="button"
+    span.sr-only Toggle navigation
+    span.icon-bar
+    span.icon-bar
+    span.icon-bar
+  / Search
+  form.navbar-left.app-search.pull-left.hidden-xs role="search" action="#{admin_search_path}"
+    input.form-control placeholder="#{@search_query ||'Search...'}" type="text" name="search"
+    =link_to("") do
+      i.fa.fa-search
+  / Right navbar
+  ul.list-inline.navbar-right.top-menu.top-right-menu
+    / mesages
+    / user login dropdown start
+    li.dropdown.text-center
+      a.dropdown-toggle data-toggle="dropdown" href="#"
+        span.username= current_admin.email
+        span.caret
+      ul.dropdown-menu.extended.pro-menu.fadeInUp.animated style="overflow: hidden; outline: none;" tabindex="5003"
+        li
+          =link_to(edit_admin_registration_path) do
+            i.fa.fa-cog
+            | Change Password
+        li
+          =link_to(destroy_admin_session_path, :method => 'delete') do
+            i.fa.fa-sign-out
+            | Log Out

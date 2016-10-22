@@ -1,0 +1,23 @@
+.wrapper-page.animated.fadeInDown
+  .panel.panel-color.panel-primary
+    .panel-heading
+      h3.text-center.m-t-10
+        | Sign in to 
+        strong = Rails.application.class.parent_name
+    .form-horizontal.m-t-40
+      = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .col-xs-12.form-group
+          = f.input :email, autofocus: true, placeholder: "Email", label: false, class: "form-control"
+        .col-xs-12.form-group
+          = f.input :password, autofocus: true, placeholder: "Password", label: false, class: "form-control"
+        - if devise_mapping.rememberable?
+          .form-group.col-xs-12
+            = f.check_box :remember_me, class: "cr-styled"
+            = f.label :remember_me,  class: "cr-styled"
+        .form-group.text-left
+          .col-xs-5
+            = f.submit "Log in", class: "btn btn-purple w-md"
+          .col-xs-7
+            = link_to(new_admin_password_path) do
+              i.fa.fa-lock.m-r-5
+              | Forgot your password?

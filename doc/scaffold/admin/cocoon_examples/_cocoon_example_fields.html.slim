@@ -1,0 +1,8 @@
+.nested-fields
+  .panel.panel-default
+    .panel-body
+      .row
+        .col-md-8
+          = f.input :created_at
+          .pull-right
+            button.btn.btn-lg.btn-danger width="90%"= link_to_remove_association "Remove Relationship", f

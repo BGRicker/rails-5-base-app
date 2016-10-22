@@ -1,0 +1,21 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" 
+    meta charset="utf-8" 
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+    = favicon_link_tag 'favicon.png'
+    title= "#{controller_name.titleize} | #{Rails.application.class.parent_name}"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = yield :header_css
+    = csrf_meta_tags
+  body.container-fluid
+    .row=render partial: 'layouts/env_banner' unless Rails.env.production?
+    .row
+      .col-lg-2
+        =render partial: 'layouts/search'
+        =render partial: 'layouts/navbar'
+      .col-lg-10
+        = render partial: "layouts/flash_messages", flash: flash
+        = yield
+    = render partial: 'layouts/footer'

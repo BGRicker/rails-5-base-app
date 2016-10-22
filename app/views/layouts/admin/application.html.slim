@@ -1,0 +1,32 @@
+doctype html
+html lang="en" 
+  head
+    meta content=("text/html; charset=UTF-8") http-equiv="Content-Type" 
+    meta charset="utf-8" 
+    meta content="width=device-width, initial-scale=1.0" name="viewport" 
+    = favicon_link_tag 'favicon.png'
+    title= "#{controller_name.titleize} | #{Rails.application.class.parent_name}"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = yield :header_css
+    = csrf_meta_tags
+  body
+    =render partial: 'layouts/admin/env_banner' unless Rails.env.production?
+    =render partial: 'layouts/admin/admin_banner'
+    section.content.row
+    aside.left-panel
+      .logo
+        = link_to(admin_root_path, class: "logo-expanded") do
+          = image_tag "logo.png", width: "40%"
+          br
+          span.nav-label  = Rails.application.class.parent_name
+      =render partial: 'layouts/admin/navbar'
+    section.content
+      =render partial: 'layouts/admin/header'
+      .wraper.container-fluid
+        = render partial: "layouts/admin/flash_messages", flash: flash
+        = yield
+      footer.footer
+        = Date.current.year
+        = Rails.application.class.parent_name
+        = javascript_include_tag 'application', 'data-turbolinks-track' => true
+        = yield :footer_js
