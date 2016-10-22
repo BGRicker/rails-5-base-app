@@ -1,2 +1,4 @@
 web: RAILS_ENV='development' bundle exec rails server thin -p $PORT
-mailcatcher: RAILS_ENV='development' mailcatcher --foreground --smtp-port 1026
+mailcatcher: RAILS_ENV='development' mailcatcher --foreground
+worker: RAILS_ENV='development' bundle exec sidekiq -C ./config/sidekiq.yml
+redis: redis-server
