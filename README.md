@@ -5,7 +5,8 @@ A very basic Rails 5 app I've assembled to get my future projects up and running
 
 * Configure your `.env` as needed
 * Change `module YourRailsApp` to your desired application name in `config/application.rb`
-* `rake db:setup`
+* `bundle exec rake secret` #Put this in .env
+* `bundle exec rake db:setup`
 * `foreman start -f Procfile.dev`
 
 Things to note: There's an existing db schema with devise, papertrail, pg-search, and an admin configured the way I like. There are no migrations, so delete `schema.rb` before running `db:setup` and you'll get an empty database. This repo will evolve as I go forward.

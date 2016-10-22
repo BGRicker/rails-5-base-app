@@ -29,7 +29,6 @@ add-config.sh
 
 #ignore rubymine config files
 .idea/* 
-Procfile-brian.dev
 
 # ignore rvm config:
 .rvmrc
