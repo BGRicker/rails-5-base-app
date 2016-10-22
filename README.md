@@ -14,30 +14,34 @@ Things to note: There's an existing db schema with devise, papertrail, pg-search
 ## Gems
 
 ### Frontend Gems
-Rails 5
-SLIM
-Boostrap 3
-Turbolinks
+
+* Rails 5
+* SLIM
+* Boostrap 3
+* Turbolinks
 
 ### Backend Gems
-Devise
-AASM
-AWS
-Draper
+
+* Devise
+* AASM
+* AWS
+* Draper
 
 ### Environment Specific Gems
 
-#### Production/Stagin
-New Relic
-Exception Notification
-Rails 12 Factor (Heroku)
+#### Production/Staging Gems
+
+* New Relic
+* Exception Notification
+* Rails 12 Factor (Heroku)
 
 #### Testing/Dev Gems
-Rspec
-Cucumber
-Mailcatcher
-VCR
-Solano
+
+* Rspec
+* Cucumber
+* Mailcatcher
+* VCR
+* Solano
 
 ## Rake Tasks
 
