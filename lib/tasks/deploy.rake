@@ -1,7 +1,7 @@
 def app_name_from_environment(env)
   case env.downcase
   when "production"
-    "#{Rails.application.class.parent_name.parameterize('-')}"
+    "#{Rails.application.class.parent_name.parameterize('-')}-production"
   when "staging"
     "#{Rails.application.class.parent_name.parameterize('-')}-staging"
   end

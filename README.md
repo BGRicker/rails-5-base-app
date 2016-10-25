@@ -1,6 +1,11 @@
 ## APP
 A very basic Rails 5 app I've assembled to get my future projects up and running quickly. 
 
+### Prerequisites
+Ruby
+Rbenv
+Heroku
+
 ### Customization and Setup
 
 * Configure your `.env` as needed
